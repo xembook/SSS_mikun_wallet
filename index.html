@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <title>SSS Mikun Wallet</title>
+  <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body>
+  <h1>SSS Mikun Wallet</h1>
+       <h4>for mainnet</h4>
+  
+  <div class="wrapper">
+      <div class="left">
+        <div class="account-card">
+          <h2>Account Info</h2>
+          <div class="container">
+            <div>Address</div>
+            <div id="wallet-addr"></div>
+          </div>
+          <div class="container">
+            <div id="wallet-xym"></div>
+          </div>
+        </div>
+        <div class="sender-card">
+          <h2>SEND</h2>
+          <div class="textfiled-wrapper">
+            <div>TO: </div>
+            <input type="text" id="form-addr" class="textfiled" />
+          </div>
+          <div class="textfiled-wrapper">
+            <div>AMOUNT: </div>
+            <input type="text" id="form-amount" class="textfiled" />
+          </div>
+          <div class="textfiled-wrapper">
+            <div>MESSAGE: </div>
+            <input type="text" id="form-message" class="textfiled" />
+          </div>
+          <input type="button" onclick="handleSSS();" value="SSSで署名"/>
+        </div>
+      </div>
+      <div class="right">
+        <div class="tx-card">
+          <h2>Transactions</h2>
+          <div id="wallet-transactions"></div>
+        </div>
+      </div>
+  </div>
+
+  <script type="text/javascript" src="https://xembook.github.io/nem2-browserify/symbol-sdk-pack-1.0.3.js"></script>
+  <script type="text/javascript" src="script.js"></script>
+</body>
+</html>
