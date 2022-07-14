@@ -32,7 +32,7 @@ const searchCriteria = {
   group: symbol.TransactionGroup.Confirmed,
   address,
   pageNumber: 1,
-  pageSize: 10,
+  pageSize: 5,
   order: symbol.Order.Desc,
 }
 
