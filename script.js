@@ -6,7 +6,7 @@ const XYM_ID = '6BED913FA20223F8'
 const NODE_URL = 'https://symbol-mikun.net:3001'
 const NET_TYPE = symbol.NetworkType.MAIN_NET
 
-const repositoryFactory = new symbol.RepositoryFactoryHttp(NODE_URL)
+const repositoryFactory = new symbol.RepositoryFactoryHttp(NODE_URL)       // RepositoryFactoryはSymbol-SDKで提供されるアカウントやモザイク等の機能を提供するRepositoryを作成するためのもの
 const accountHttp = repositoryFactory.createAccountRepository()
 const transactionHttp = repositoryFactory.createTransactionRepository()
 
@@ -15,7 +15,7 @@ setTimeout(() => {
 const address = symbol.Address.createFromRawAddress(window.SSS.activeAddress)
 
 const dom_addr = document.getElementById('wallet-addr')
-dom_addr.innerText = address.pretty()
+dom_addr.innerText = address.pretty()                                       // address.pretty() アドレスがハイフンで区切られた文字列で表示され見やすくなる
 
 accountHttp.getAccountInfo(address)
   .toPromise()
@@ -27,7 +27,8 @@ accountHttp.getAccountInfo(address)
       }
     }
   })
-const searchCriteria = {
+                                                 // トランザクション履歴を取得する
+const searchCriteria = {                                   
   group: symbol.TransactionGroup.Confirmed,
   address,
   pageNumber: 1,
@@ -65,13 +66,15 @@ function getTransactionType (type) { // https://symbol.github.io/symbol-sdk-type
   return 'OTHER TRANSACTION'
 }
 
+// handleSSS関数はトランザクションを作成し、window.SSS.setTransaction関数を実行しSSSにトランザクションを登録します。そしてwindow.SSS.requestSign関数を実行し、SSSを用いた署名をユーザ－に要求します。
+
 function handleSSS() {
   console.log('handle sss')
   const addr = document.getElementById('form-addr').value
   const amount = document.getElementById('form-amount').value
   const message = document.getElementById('form-message').value
   
-  const tx = symbol.TransferTransaction.create(
+  const tx = symbol.TransferTransaction.create(        // トランザクションを生成
     symbol.Deadline.create(EPOCH),
     symbol.Address.createFromRawAddress(addr),
     [
@@ -85,9 +88,9 @@ function handleSSS() {
     symbol.UInt64.fromUint(2000000)
   )
 
-  window.SSS.setTransaction(tx)
+  window.SSS.setTransaction(tx)                 // SSSにトランザクションを登録
 
-  window.SSS.requestSign().then(signedTx => {
+  window.SSS.requestSign().then(signedTx => {   // SSSを用いた署名をユーザーに要求
     console.log('signedTx', signedTx)
     transactionHttp.announce(signedTx)
   })
