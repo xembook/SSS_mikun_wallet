@@ -5,10 +5,14 @@ body {
 
 h1 {
   color:rgb(161, 76, 194);
-  font color
   font-size: 96px;
   text-align: right;
   margin-right: 80px;
+}
+
+h2 {
+  color:blue;
+  font-size: 32px;
 }
 
 h4 {
