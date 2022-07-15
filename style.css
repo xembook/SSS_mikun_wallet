@@ -45,6 +45,7 @@ h4 {
 
 
 .button-sign{
+  border-radius: 40px;
   text-align:right;
   margin: 16px;
   padding: 16px;
