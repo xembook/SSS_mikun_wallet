@@ -61,8 +61,8 @@ h4 {
 }
 
 .container {
-  font-size: 50px;
-  margin: 16px;
+  font-size: 24px;                 // アドレス, XYM Balance のサイズ
+  margin: 32px;
 }
 
 .wrapper {
