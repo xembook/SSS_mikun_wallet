@@ -57,11 +57,11 @@ h4 {
 }
 
 #wallet-addr {
-  font-size: 50px;
+  font-size: 24px;                 // ウォレットアドレスの文字サイズ
 }
 
 .container {
-  font-size: 24px;
+  font-size: 50px;
   margin: 16px;
 }
 
