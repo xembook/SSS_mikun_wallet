@@ -9,19 +9,22 @@
        <h4>for mainnet</h4>
   
   <div class="wrapper">
-      <div class="left">.                   
+      <div class="left">
         <div class="account-card">
+          
           <h2>アカウント情報</h2>
           <div class="container">
             <div>アドレス</div>
             <div id="wallet-addr"></div>
           </div>
-          <div class="container">
+          <div class="container" style="color:blue;">
             <div id="wallet-xym"></div>
           </div>
         </div>
+        
         <div class="sender-card">
           <h2>XYMを送信する</h2>
+          
           <div class="textfiled-wrapper">
             <div>宛先</div>
             <input type="text" id="form-addr" class="textfiled" />
@@ -34,7 +37,9 @@
             <div>メッセージ</div>
             <input type="text" id="form-message" class="textfiled" />
           </div>
+          
           <input type="button" onclick="handleSSS();" value="SSSで署名" style="width:100px;height:50px;"/>
+          
         </div>
       </div>
       <div class="right">
