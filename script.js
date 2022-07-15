@@ -23,7 +23,7 @@ accountHttp.getAccountInfo(address)
     for (let m of accountInfo.mosaics) {
       if (m.id.id.toHex() === XYM_ID) {
         const dom_xym = document.getElementById('wallet-xym')
-        dom_xym.innerText = `XYM Balance : ${m.amount.compact() / Math.pow(10, 6)}`
+        dom_xym.innerText = `XYM 残高 : ${m.amount.compact() / Math.pow(10, 6)}`
       }
     }
   })
@@ -48,8 +48,8 @@ transactionHttp
       const dom_txType = document.createElement('div')
       const dom_hash = document.createElement('div')
 
-      dom_txType.innerText = `Transaction Type : ${getTransactionType(tx.type)}`
-      dom_hash.innerText = `Transaction Hash : ${tx.transactionInfo.hash}`
+      dom_txType.innerText = `トランザクションタイプ : ${getTransactionType(tx.type)}`
+      dom_hash.innerText = `トランザクションハッシュ : ${tx.transactionInfo.hash}`
 
       dom_tx.appendChild(dom_txType)
       dom_tx.appendChild(dom_hash)
