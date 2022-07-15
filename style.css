@@ -41,7 +41,7 @@ h4 {
 .tx-card {
   background: rgb(255, 255, 255,0.8);
   border-radius: 16px;                    // 角丸　
-  padding: 16px;
+  padding: 32px;
   width: 1200px;
   margin: 16px;
 }
