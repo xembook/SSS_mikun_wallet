@@ -27,20 +27,20 @@ h4 {
 .account-card {
   background: rgb(255, 255, 255,0.8);
   border-radius: 16px;
-  margin: 16px;
-  padding: 16px;
+  margin: 20px;
+  padding: 20px;
 }
 
 .sender-card {
   background: rgb(255, 255, 255,0.8);
-  border-radius: 32px;
+  border-radius: 16px;
   margin: 16px;
   padding: 16px;
 }
 
 .tx-card {
   background: rgb(255, 255, 255,0.8);
-  border-radius: 16px;
+  border-radius: 16px;                    // 角丸　
   padding: 32px;
   width: 1200px;
   margin: 16px;
