@@ -48,8 +48,8 @@ transactionHttp
       const dom_txType = document.createElement('div')
       const dom_hash = document.createElement('div')
 
-      dom_txType.innerText = `Tx タイプ : ${getTransactionType(tx.type)}`
-      dom_hash.innerText = `Tx ハッシュ : ${tx.transactionInfo.hash}`
+      dom_txType.innerText = `Tx Type : ${getTransactionType(tx.type)}`
+      dom_hash.innerText = `Tx Hash : ${tx.transactionInfo.hash}`
 
       dom_tx.appendChild(dom_txType)
       dom_tx.appendChild(dom_hash)
