@@ -46,6 +46,8 @@ h4 {
 
 .button-sign{
   text-align:right;
+  margin: 16px;
+  padding: 16px;
 }
 
 .tx-card {
