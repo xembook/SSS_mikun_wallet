@@ -95,16 +95,14 @@ function handleSSS() {
     console.log('signedTx', signedTx)
     transactionHttp.announce(signedTx)
     
-    accountA = symbol.PublicAccount.createFromPublicKey(signedTx.signerPublickey);
-    
                                                 
-                                               // 送金音を鳴らす
+                                               // (未承認)送金音を鳴らす
     var my_audio = new Audio("https://github.com/symbol/desktop-wallet/raw/dev/src/views/resources/audio/ding.ogg");
     my_audio.currentTime = 0;  //再生開始位置を先頭に戻す
     my_audio.play();  //サウンドを再生
     
     
-    //リスナー
+    //　リスナーに挑戦
   
   (script = document.createElement('script')).src = 'https://xembook.github.io/nem2-browserify/symbol-sdk-pack-2.0.0.js';
   document.getElementsByTagName('head')[0].appendChild(script);
@@ -118,7 +116,7 @@ function handleSSS() {
   listener.open().then(() => {
 
     //承認トランザクションの検知
-    listener.confirmed(accountA.address)
+    listener.confirmed(address)         //  ←ここにアドレスを持ってきたい。どうしたらよいでしょうか？
     .subscribe(tx=>{
         //受信後の処理を記述
         //console.log(tx);
