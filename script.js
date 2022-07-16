@@ -86,7 +86,7 @@ function handleSSS() {
     ],
     symbol.PlainMessage.create(message),
     NET_TYPE,
-    symbol.UInt64.fromUint(200000)
+    symbol.UInt64.fromUint(100000)
   )
 
   window.SSS.setTransaction(tx)                 // SSSにトランザクションを登録
