@@ -114,13 +114,11 @@ function handleSSS() {
   
   listener.open().then(() => {
 
-    console.log(tx);
-
     //承認トランザクションの検知
-    listener.confirmed(address)
+    listener.confirmed(tx.recipientAddress)
     .subscribe(tx=>{
         //受信後の処理を記述
-        console.log(tx);
+        //console.log(tx);
       
                                              // 承認音を鳴らす
         var my_audio = new Audio("https://github.com/symbol/desktop-wallet/raw/dev/src/views/resources/audio/ding2.ogg");
