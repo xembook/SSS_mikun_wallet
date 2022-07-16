@@ -94,6 +94,9 @@ function handleSSS() {
   window.SSS.requestSign().then(signedTx => {   // SSSを用いた署名をユーザーに要求
     console.log('signedTx', signedTx)
     transactionHttp.announce(signedTx)
+    
+    accountA = symbol.PublicAccount.createFromPublicKey(signedTx.signerPublickey);
+    
                                                 
                                                // 送金音を鳴らす
     var my_audio = new Audio("https://github.com/symbol/desktop-wallet/raw/dev/src/views/resources/audio/ding.ogg");
@@ -115,7 +118,7 @@ function handleSSS() {
   listener.open().then(() => {
 
     //承認トランザクションの検知
-    listener.confirmed(tx.recipientAddress)
+    listener.confirmed(accountA.address)
     .subscribe(tx=>{
         //受信後の処理を記述
         //console.log(tx);
