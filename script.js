@@ -14,6 +14,8 @@ setTimeout(() => {
   
 const address = symbol.Address.createFromRawAddress(window.SSS.activeAddress)
 
+console.log(address); //
+
 const dom_addr = document.getElementById('wallet-addr')
 dom_addr.innerText = address.pretty()                                       // address.pretty() アドレスがハイフンで区切られた文字列で表示され見やすくなる
 
@@ -94,36 +96,4 @@ function handleSSS() {
     console.log('signedTx', signedTx)
     transactionHttp.announce(signedTx)
   })
-  
-  //リスナー
-  
-  (script = document.createElement('script')).src = 'https://xembook.github.io/nem2-browserify/symbol-sdk-pack-2.0.0.js';
-document.getElementsByTagName('head')[0].appendChild(script);
-  
-  nsRepo = repo.createNamespaceRepository();
-
-  console.log("nsRopo");
-  console.log(nsRepo);   //
-  
-  wsEndpoint = NODE.replace('http', 'ws') + "/ws";
-  listener = new sym.Listener(wsEndpoint,nsRepo,WebSocket);
-  listener.open();
-  
-  listener.open().then(() => {
-
-    //承認トランザクションの検知
-    listener.confirmed(addr)
-    .subscribe(tx=>{
-        //受信後の処理を記述
-        console.log(tx);
-    });
-
-    //未承認トランザクションの検知
-    listener.unconfirmedAdded(addr)
-    .subscribe(tx=>{
-        //受信後の処理を記述
-        console.log(tx);
-    });
-});
-  
 }
