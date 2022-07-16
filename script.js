@@ -42,7 +42,7 @@ accountHttp.getAccountInfo(address)
   listener.open().then(() => {
 
     //承認トランザクションの検知
-    listener.confirmed(address)         //  ←ここにアドレスを持ってきたい。どうしたらよいでしょうか？
+    listener.confirmed(address)
     .subscribe(tx=>{
         //受信後の処理を記述
         //console.log(tx);
