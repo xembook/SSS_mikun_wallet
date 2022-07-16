@@ -74,8 +74,6 @@ function handleSSS() {
   const amount = document.getElementById('form-amount').value
   const message = document.getElementById('form-message').value
   
-  console.log(symbol.Address.createFromRawAddress(addr)); //
-  
   const tx = symbol.TransferTransaction.create(        // トランザクションを生成
     symbol.Deadline.create(EPOCH),
     symbol.Address.createFromRawAddress(addr),
@@ -98,6 +96,9 @@ function handleSSS() {
   })
   
   //リスナー
+  
+  (script = document.createElement('script')).src = 'https://xembook.github.io/nem2-browserify/symbol-sdk-pack-2.0.0.js';
+document.getElementsByTagName('head')[0].appendChild(script);
   
   nsRepo = repo.createNamespaceRepository();
 
