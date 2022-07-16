@@ -14,8 +14,6 @@ setTimeout(() => {
   
 const address = symbol.Address.createFromRawAddress(window.SSS.activeAddress)
 
-console.log(address); //
-
 const dom_addr = document.getElementById('wallet-addr')
 dom_addr.innerText = address.pretty()                                       // address.pretty() アドレスがハイフンで区切られた文字列で表示され見やすくなる
 
@@ -29,6 +27,8 @@ accountHttp.getAccountInfo(address)
       }
     }
   })
+  
+  console.log(address); //
                                                  // トランザクション履歴を取得する
 const searchCriteria = {                                   
   group: symbol.TransactionGroup.Confirmed,
