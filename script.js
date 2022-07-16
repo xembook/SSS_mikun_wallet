@@ -94,10 +94,41 @@ function handleSSS() {
   window.SSS.requestSign().then(signedTx => {   // SSSを用いた署名をユーザーに要求
     console.log('signedTx', signedTx)
     transactionHttp.announce(signedTx)
-
+                                                
+                                               // 送金音を鳴らす
     var my_audio = new Audio("https://github.com/symbol/desktop-wallet/raw/dev/src/views/resources/audio/ding.ogg");
     my_audio.currentTime = 0;  //再生開始位置を先頭に戻す
     my_audio.play();  //サウンドを再生
+    
+    
+    //リスナー
+  
+  (script = document.createElement('script')).src = 'https://xembook.github.io/nem2-browserify/symbol-sdk-pack-2.0.0.js';
+  document.getElementsByTagName('head')[0].appendChild(script);
+  
+  nsRepo = repo.createNamespaceRepository();
+  
+  wsEndpoint = NODE.replace('http', 'ws') + "/ws";
+  listener = new sym.Listener(wsEndpoint,nsRepo,WebSocket);
+  listener.open();
+  
+  listener.open().then(() => {
+
+    //承認トランザクションの検知
+    listener.confirmed(address)
+    .subscribe(tx=>{
+        //受信後の処理を記述
+        console.log(tx);
+      
+                                             // 承認音を鳴らす
+        var my_audio = new Audio("https://github.com/symbol/desktop-wallet/raw/dev/src/views/resources/audio/ding2.ogg");
+        my_audio.currentTime = 0;  //再生開始位置を先頭に戻す
+        my_audio.play();  //サウンドを再生
+      
+    });
+
+   
+   });
     
   })
 }
