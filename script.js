@@ -114,6 +114,8 @@ function handleSSS() {
   
   listener.open().then(() => {
 
+    console.log(tx);
+
     //承認トランザクションの検知
     listener.confirmed(address)
     .subscribe(tx=>{
