@@ -106,10 +106,10 @@ function handleSSS() {
   (script = document.createElement('script')).src = 'https://xembook.github.io/nem2-browserify/symbol-sdk-pack-2.0.0.js';
   document.getElementsByTagName('head')[0].appendChild(script);
   
-  nsRepo = repo.createNamespaceRepository();
+  nsRepo = repositoryFactory.createNamespaceRepository();
   
-  wsEndpoint = NODE.replace('http', 'ws') + "/ws";
-  listener = new sym.Listener(wsEndpoint,nsRepo,WebSocket);
+  wsEndpoint = NODE_URL.replace('http', 'ws') + "/ws";
+  listener = new symbol.Listener(wsEndpoint,nsRepo,WebSocket);
   listener.open();
   
   listener.open().then(() => {
