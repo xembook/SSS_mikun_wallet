@@ -74,6 +74,8 @@ function handleSSS() {
   const amount = document.getElementById('form-amount').value
   const message = document.getElementById('form-message').value
   
+  console.log(addr);
+  
   const tx = symbol.TransferTransaction.create(        // トランザクションを生成
     symbol.Deadline.create(EPOCH),
     symbol.Address.createFromRawAddress(addr),
