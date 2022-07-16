@@ -27,9 +27,8 @@ accountHttp.getAccountInfo(address)
       }
     }
   })
-  
-  console.log(address);
-                                                 // トランザクション履歴を取得する
+ 
+                                  // トランザクション履歴を取得する
 const searchCriteria = {                                   
   group: symbol.TransactionGroup.Confirmed,
   address,
@@ -95,5 +94,10 @@ function handleSSS() {
   window.SSS.requestSign().then(signedTx => {   // SSSを用いた署名をユーザーに要求
     console.log('signedTx', signedTx)
     transactionHttp.announce(signedTx)
+
+    var my_audio = new Audio("https://github.com/symbol/desktop-wallet/raw/dev/src/views/resources/audio/ding.ogg");
+    my_audio.currentTime = 0;  //再生開始位置を先頭に戻す
+    my_audio.play();  //サウンドを再生
+    
   })
 }
