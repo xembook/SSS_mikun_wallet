@@ -94,4 +94,29 @@ function handleSSS() {
     console.log('signedTx', signedTx)
     transactionHttp.announce(signedTx)
   })
+  
+  //リスナー
+  
+  nsRepo = repo.createNamespaceRepository();
+  wsEndpoint = NODE.replace('http', 'ws') + "/ws";
+  listener = new sym.Listener(wsEndpoint,nsRepo,WebSocket);
+  listener.open();
+  
+  listener.open().then(() => {
+
+    //承認トランザクションの検知
+    listener.confirmed(addr)
+    .subscribe(tx=>{
+        //受信後の処理を記述
+        console.log(tx);
+    });
+
+    //未承認トランザクションの検知
+    listener.unconfirmedAdded(addr)
+    .subscribe(tx=>{
+        //受信後の処理を記述
+        console.log(tx);
+    });
+});
+  
 }
