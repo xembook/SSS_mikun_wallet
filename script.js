@@ -59,7 +59,7 @@ transactionHttp
       dom_txInfo.appendChild(dom_tx)
     }
   })
-}, 2000)
+}, 3000)
 
 
 function getTransactionType (type) { // https://symbol.github.io/symbol-sdk-typescript-javascript/1.0.3/enums/TransactionType.html
