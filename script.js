@@ -28,6 +28,7 @@ accountHttp.getAccountInfo(address)
     }
   })
   
+  console.log(address);
                                                  // トランザクション履歴を取得する
 const searchCriteria = {                                   
   group: symbol.TransactionGroup.Confirmed,
@@ -35,7 +36,6 @@ const searchCriteria = {
   pageNumber: 1,
   pageSize: 10,
   order: symbol.Order.Desc,
-  console.log(address);
 }
 
 transactionHttp
