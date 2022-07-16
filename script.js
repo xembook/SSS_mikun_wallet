@@ -10,6 +10,9 @@ const repositoryFactory = new symbol.RepositoryFactoryHttp(NODE_URL)       // Re
 const accountHttp = repositoryFactory.createAccountRepository()
 const transactionHttp = repositoryFactory.createTransactionRepository()
 
+(script = document.createElement('script')).src = 'https://xembook.github.io/nem2-browserify/symbol-sdk-pack-2.0.0.js';
+document.getElementsByTagName('head')[0].appendChild(script);
+
 setTimeout(() => {
   
 const address = symbol.Address.createFromRawAddress(window.SSS.activeAddress)
@@ -29,9 +32,6 @@ accountHttp.getAccountInfo(address)
   })
  
     //　リスナーに挑戦  //////////////////////
-  
-  //(script = document.createElement('script')).src = 'https://xembook.github.io/nem2-browserify/symbol-sdk-pack-2.0.0.js';
-  //document.getElementsByTagName('head')[0].appendChild(script);
   
   nsRepo = repositoryFactory.createNamespaceRepository();
   
