@@ -45,6 +45,7 @@ h4 {
 
 #button-haichi{
   text-align: right;
+  cursor: pointer;
 }
 
 .button-sign{
@@ -52,7 +53,6 @@ h4 {
   background:rgb(205, 0, 255); 
   color:rgb(255,255,255); 
   border-radius: 16px;"
-  cursor: pointer;
 }
 
 .tx-card {
