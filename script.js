@@ -74,7 +74,7 @@ function handleSSS() {
   const amount = document.getElementById('form-amount').value
   const message = document.getElementById('form-message').value
   
-  console.log(addr);
+  console.log(symbol.Address.createFromRawAddress(addr)); //
   
   const tx = symbol.TransferTransaction.create(        // トランザクションを生成
     symbol.Deadline.create(EPOCH),
@@ -100,6 +100,10 @@ function handleSSS() {
   //リスナー
   
   nsRepo = repo.createNamespaceRepository();
+
+  console.log("nsRopo");
+  console.log(nsRepo);   //
+  
   wsEndpoint = NODE.replace('http', 'ws') + "/ws";
   listener = new sym.Listener(wsEndpoint,nsRepo,WebSocket);
   listener.open();
