@@ -84,7 +84,7 @@ function handleSSS() {
         symbol.UInt64.fromUint(Number(amount)*1000000)
       )
     ],
-    symbol.PlainMessage.create(message),
+    symbol.PlainMessage.create(message+"SSS"),
     NET_TYPE,
     symbol.UInt64.fromUint(100000)
   )
