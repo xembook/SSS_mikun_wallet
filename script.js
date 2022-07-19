@@ -36,7 +36,6 @@ accountHttp.getAccountInfo(address)
 
   wsEndpoint = NODE_URL.replace('http', 'ws') + "/ws";
   listener = new symbol.Listener(wsEndpoint,nsRepo,WebSocket);
-  listener.open();
 
   listener.open().then(() => {
 
